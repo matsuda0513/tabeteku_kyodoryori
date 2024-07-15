@@ -1,0 +1,9 @@
+<h1>郷土料理一覧</h1>
+
+<ul>
+  <% @foods.each do |food| %>
+    <li>
+      <%= link_to food[:name], foods_show_path(url: food[:url]) %>
+    </li>
+  <% end %>
+</ul>
