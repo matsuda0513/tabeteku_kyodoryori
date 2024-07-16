@@ -1,0 +1,9 @@
+<h1><%= @kyodoryouri_info[:name] %></h1>
+<p>県名: <%= @kyodoryouri_info[:prefecture] %></p>
+<p>歴史・由来・関連行事: <%= @kyodoryouri_info[:history] %></p>
+<% if @kyodoryouri_info[:image_url] %>
+  <img src="<%= @kyodoryouri_info[:image_url] %>" alt="<%= @kyodoryouri_info[:name] %>">
+  <% if @kyodoryouri_info[:image_source] %>
+    <p>画像提供元: <%= @kyodoryouri_info[:image_source] %></p>
+  <% end %>
+<% end %>

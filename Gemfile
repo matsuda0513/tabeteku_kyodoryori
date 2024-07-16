@@ -80,6 +80,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 
 gem 'mini_magick'
+
 gem 'image_processing', '~> 1.2'
 
 gem 'mechanize'

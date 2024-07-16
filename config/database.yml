@@ -11,7 +11,7 @@
 #
 default: &default
   adapter: mysql2
-  encoding: utf8mb4
+  encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
@@ -53,3 +53,4 @@ production:
   database: tabeteku_kyodoryori_production
   username: tabeteku_kyodoryori
   password: <%= ENV["TABETEKU_KYODORYORI_DATABASE_PASSWORD"] %>
+
