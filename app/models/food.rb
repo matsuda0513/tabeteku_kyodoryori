@@ -1,3 +1,7 @@
 class Food < ApplicationRecord
-  has_one_attached :image
+  validates :name, presence: true
+  validates :prefecture, presence: true
+  validates :history, presence: true
+  validates :image_url, presence: true
+  validates :detail_url, presence: true, uniqueness: true
 end
