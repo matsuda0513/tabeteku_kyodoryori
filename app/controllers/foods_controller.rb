@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   def index
-    @foods = ScrapeService.fetch_all_kyodoryouri_links
+    @foods = Food.all
   end
 
   def show
