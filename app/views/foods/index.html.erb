@@ -3,7 +3,7 @@
 <ul>
   <% @foods.each do |food| %>
     <li>
-      <%= link_to food[:name], foods_show_path(url: food[:url]) %>
+      <%= link_to food.name, food_path(food) %>
     </li>
   <% end %>
 </ul>
