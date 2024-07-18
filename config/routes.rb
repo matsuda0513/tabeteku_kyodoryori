@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  root 'foods#index'
-  get 'foods/show', to: 'foods#show'
+  root 'pages#home'
+  resources :foods, only: [:index, :show] do
+    collection do
+      get 'search'
+    end
+  end
 end

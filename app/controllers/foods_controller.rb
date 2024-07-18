@@ -4,7 +4,17 @@ class FoodsController < ApplicationController
   end
 
   def show
-    url = params[:url]
-    @kyodoryouri_info = ScrapeService.fetch_kyodoryouri_details(url)
+    @food = Food.find(params[:id])
+    @kyodoryouri_info = {
+      name: @food.name,
+      prefecture: @food.prefecture,
+      history: @food.history,
+      image_url: @food.image_url,
+      image_source: @food.image_credit
+    }
+  end
+
+  def search
+    @foods = Food.search(params[:keyword])
   end
 end
