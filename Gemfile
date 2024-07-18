@@ -88,5 +88,3 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
 gem 'mechanize'
-
-gem 'bundler', '2.4.1'
