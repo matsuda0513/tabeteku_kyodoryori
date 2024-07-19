@@ -1,7 +1,50 @@
-<h1>トップページ</h1>
-<%= link_to '郷土料理一覧', foods_path %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>トップページ</title>
+  <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <div class="background"></div>
 
+  <header>
+    <nav>
+      <ul>
+        <li><%= link_to '郷土料理一覧', foods_path %></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="image-container">
+      <img src="/images/background.jpg" alt="背景画像" class="background-image">
+    </div>
+
+    <div class="logo">
+    <img src="/images/logov2.png" alt="ロゴ">
+    </div>
+
+    <div class="search-form-container">
+      <%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :name_keyword, placeholder: "郷土料理を検索する", class: "search-input" %>
+        <%= form.text_field :prefecture_keyword, placeholder: "県名を検索する", class: "search-input" %>
+        <%= form.submit "検索", class: "search-btn" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="description">
+    <h2>このサイトについて</h2>
+    <p>このサイトは、郷土料理についての情報を提供しています。各地の郷土料理を検索し、詳細な情報を閲覧することができます。</p>
+  </div>
+</body>
+</html>
+
+<<<<<<< Updated upstream
 <%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "郷土料理を検索する", class: "search-input" %>
+  <%= form.text_field :name_keyword, placeholder: "郷土料理を検索する", class: "search-input" %>
+  <%= form.text_field :prefecture_keyword, placeholder: "県名を検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
+=======
+>>>>>>> Stashed changes

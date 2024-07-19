@@ -1,0 +1,13 @@
+<%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :name_keyword, placeholder: "郷土料理を検索する", class: "search-input" %>
+  <%= form.text_field :prefecture_keyword, placeholder: "県名を検索する", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+<% end %>
+
+<div class="contents row">
+  <% @foods.each do |food| %>
+    <li>
+      <%= link_to "#{food.name}【#{food.prefecture}】", food_path(food) %>
+    </li>
+  <% end %>
+</div>
