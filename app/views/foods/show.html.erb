@@ -7,5 +7,14 @@
 
 <p>
   <strong>食べログで検索:</strong>
-  <%= link_to "食べログで#{@kyodoryouri_info[:name]}を検索", @tabelog_url, target: "_blank" %>
+  <%= link_to "食べログで「#{@kyodoryouri_info[:name]}」を検索", @tabelog_url, target: "_blank" %>
+</p>
+<p>
+  <strong>Instagramで検索:</strong>
+  <%= link_to "Instagramで「#{@kyodoryouri_info[:name]}」を検索", @instagram_url, target: "_blank" %>
+</p>
+
+<p>
+  <strong>Cookpadで検索:</strong>
+  <%= link_to "Cookpadで「#{@kyodoryouri_info[:name]}」を検索", @cookpad_url, target: "_blank" %>
 </p>
