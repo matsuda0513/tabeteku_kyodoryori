@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  text-align: right;
+  z-index: 10; /* ヘッダーが画像よりも上に表示されるように */
+}
+
+header nav {
+  padding-right: 10px; /* 右から10px内側に寄せる */
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+header ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 50px 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1; /* 背景画像を最背面に */
+}
+
+.logo {
+  position: absolute;
+  top: 0px;
+  /* left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; ロゴを背景画像の上に表示 */
+  margin-bottom: 0px; /* ロゴとフォームの間のスペースを調整 */
+}
+
+.logo img {
+  max-width: 90%;
+  height: auto;
+}
+
+.search-form-container {
+  transform: scale(1); /* サイズを大きく */
+}
+
+.search-form input[type="text"] {
+  width: 30%; /* 入力フィールドの幅を広げる */
+  padding: 10px; /* 入力フィールドのパディングを増やす */
+  font-size: 15px; /* 入力フィールドのフォントサイズを大きく */
+  margin: 10px 0; /* 入力フィールドの上下マージンを増やす */
+}
+
+.search-form input[type="submit"] {
+  padding: 10px 20px; /* サブミットボタンのパディングを増やす */
+  font-size: 15px; /* サブミットボタンのフォントサイズを大きく */
+}S
+
+.description {
+  margin-top: 100vh;
+  padding: 50px 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
