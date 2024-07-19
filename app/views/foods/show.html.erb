@@ -3,4 +3,9 @@
 <p><strong>歴史・由来・関連行事:</strong> <%= @kyodoryouri_info[:history] %></p>
 <p><strong>画像:</strong></p>
 <%= image_tag @kyodoryouri_info[:image_url] if @kyodoryouri_info[:image_url].present? %>
-<p><strong>画像クレジット:</strong> <%= @kyodoryouri_info[:image_source] %></p>
+<p><%= @kyodoryouri_info[:image_source] %></p>
+
+<p>
+  <strong>食べログで検索:</strong>
+  <%= link_to "食べログで#{@kyodoryouri_info[:name]}を検索", @tabelog_url, target: "_blank" %>
+</p>
