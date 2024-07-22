@@ -1,3 +1,4 @@
+/* 共通のスタイル */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -34,7 +35,8 @@ header ul li a {
   text-decoration: none;
 }
 
-.container {
+/* トップページ専用のスタイル */
+.home-container {
   position: relative;
   text-align: center;
   color: white;
@@ -46,7 +48,7 @@ header ul li a {
   align-items: center;
 }
 
-.background-image {
+.home-background-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -56,39 +58,127 @@ header ul li a {
   z-index: -1; /* 背景画像を最背面に */
 }
 
-.logo {
+.home-logo {
   position: absolute;
-  top: 0px;
+  top: -50px;
   /* left: 50%;
   transform: translateX(-50%);
   z-index: 1; ロゴを背景画像の上に表示 */
   margin-bottom: 0px; /* ロゴとフォームの間のスペースを調整 */
 }
 
-.logo img {
+.home-logo img {
   max-width: 90%;
   height: auto;
 }
 
-.search-form-container {
+.home-search-form-container {
+  position: relative; /* デフォルトの位置付け */
+  margin-top: -200px;
   transform: scale(1); /* サイズを大きく */
 }
 
-.search-form input[type="text"] {
+.home-search-form input[type="text"] {
   width: 30%; /* 入力フィールドの幅を広げる */
   padding: 10px; /* 入力フィールドのパディングを増やす */
   font-size: 15px; /* 入力フィールドのフォントサイズを大きく */
   margin: 10px 0; /* 入力フィールドの上下マージンを増やす */
 }
 
-.search-form input[type="submit"] {
+.home-search-form input[type="submit"] {
   padding: 10px 20px; /* サブミットボタンのパディングを増やす */
   font-size: 15px; /* サブミットボタンのフォントサイズを大きく */
-}S
+}
 
-.description {
+.home-description {
   margin-top: 100vh;
   padding: 50px 20px;
   background-color: rgba(255, 255, 255, 0.9);
   color: black;
+}
+
+/* 詳細ページ専用のスタイル */
+.show-container {
+  margin-top: 60px; /* ヘッダーの下に内容を表示 */
+  padding: 20px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.show-top {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.show-image {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.show-details {
+  flex: 1;
+}
+
+.show-details h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.show-details p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.show-links {
+  margin-top: 50px;
+}
+
+.show-links .link-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.show-links .link-text {
+  min-width: 160px; /* 固定幅を指定 */
+  text-align: center;
+  /* font-weight: bold; */
+}
+
+.show-links .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  min-width: 200px; /* ボタンの最小幅を統一 */
+  text-align: center;
+}
+
+.btn-tabelog {
+  background-color: #FF9900;
+}
+
+.btn-instagram {
+  background-color: #C13584;
+}
+
+.btn-cookpad {
+  background-color: #FF5722;
+}
+
+.show-bottom {
+  margin-top: 20px;
+}
+
+.show-bottom h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.show-bottom p {
+  font-size: 1em;
 }
