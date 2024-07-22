@@ -28,6 +28,10 @@ class ScrapeService
 
   def self.fetch_kyodoryouri_details(url)
     options = Selenium::WebDriver::Chrome::Options.new
+    options.add_argument('--headless')  # ヘッドレスモードで実行するオプションを追加
+    options.add_argument('--disable-gpu')  # GPUの使用を無効化するオプションを追加
+    options.add_argument('--window-size=1920,1080')  # ウィンドウサイズを設定するオプションを追加
+
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.get(url)
     sleep 4
@@ -66,7 +70,8 @@ class ScrapeService
     links = fetch_all_kyodoryouri_links
     links.each do |link|
       details = fetch_kyodoryouri_details(link[:url])
-      Food.create!(
+      food = Food.find_or_initialize_by(detail_url: details[:detail_url])
+      food.update!(
         name: details[:name],
         prefecture: details[:prefecture],
         history: details[:history],
