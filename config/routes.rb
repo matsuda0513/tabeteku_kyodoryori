@@ -5,4 +5,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+
+  #英語用のパス生成
+
 end

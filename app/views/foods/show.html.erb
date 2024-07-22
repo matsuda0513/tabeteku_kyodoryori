@@ -1,20 +1,47 @@
-<h1><%= @kyodoryouri_info[:name] %></h1>
-<p><strong>県名:</strong> <%= @kyodoryouri_info[:prefecture] %></p>
-<p><strong>歴史・由来・関連行事:</strong> <%= @kyodoryouri_info[:history] %></p>
-<p><strong>画像:</strong></p>
-<%= image_tag @kyodoryouri_info[:image_url] if @kyodoryouri_info[:image_url].present? %>
-<p><%= @kyodoryouri_info[:image_source] %></p>
-
-<p>
-  <strong>食べログで検索:</strong>
-  <%= link_to "食べログで「#{@kyodoryouri_info[:name]}」を検索", @tabelog_url, target: "_blank" %>
-</p>
-<p>
-  <strong>Instagramで検索:</strong>
-  <%= link_to "Instagramで「#{@kyodoryouri_info[:name]}」を検索", @instagram_url, target: "_blank" %>
-</p>
-
-<p>
-  <strong>Cookpadで検索:</strong>
-  <%= link_to "Cookpadで「#{@kyodoryouri_info[:name]}」を検索", @cookpad_url, target: "_blank" %>
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>郷土料理詳細</title>
+  <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><%= link_to 'ホーム', root_path %></li>
+        <li><%= link_to '郷土料理一覧', foods_path %></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="show-container">
+    <div class="show-top">
+      <div class="show-image">
+        <%= image_tag @kyodoryouri_info[:image_url] if @kyodoryouri_info[:image_url].present? %>
+        <p><%= @kyodoryouri_info[:image_source] %></p>
+      </div>
+      <div class="show-details">
+        <h1><%= @kyodoryouri_info[:name] %></h1>
+        <p><strong>県名:</strong> <%= @kyodoryouri_info[:prefecture] %></p>
+        <div class="show-links">
+          <div class="link-item">
+            <span class="link-text">    お店で食べたい！</span>
+            <%= link_to "食べログで検索する", @tabelog_url, class: "btn btn-tabelog", target: "_blank" %>
+          </div>
+          <div class="link-item">
+            <span class="link-text">おうちでつくりたい！</span>
+            <%= link_to "Cookpadで検索する", @cookpad_url, class: "btn btn-cookpad", target: "_blank" %>
+          </div>
+          <div class="link-item">
+            <span class="link-text">写真をみたい！</span>
+            <%= link_to "Instagramで検索する", @instagram_url, class: "btn btn-instagram", target: "_blank" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="show-bottom">
+      <h2>歴史・由来・関連行事</h2>
+      <p><%= @kyodoryouri_info[:history] %></p>
+    </div>
+  </div>
+</body>
+</html>

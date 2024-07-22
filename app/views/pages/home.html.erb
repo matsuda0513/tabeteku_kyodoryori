@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>トップページ</title>
-  <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
   <div class="background"></div>
@@ -15,36 +15,29 @@
     </nav>
   </header>
 
-  <div class="container">
-    <div class="image-container">
-      <img src="/images/background.jpg" alt="背景画像" class="background-image">
+  <div class="home-container">
+    <div class="home-image-container">
+      <img src="/images/background.jpg" alt="背景画像" class="home-background-image">
     </div>
 
-    <div class="logo">
+    <div class="home-logo">
     <img src="/images/logov2.png" alt="ロゴ">
     </div>
 
-    <div class="search-form-container">
-      <%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
-        <%= form.text_field :name_keyword, placeholder: "郷土料理を検索する", class: "search-input" %>
-        <%= form.text_field :prefecture_keyword, placeholder: "県名を検索する", class: "search-input" %>
+    <div class="home-search-form-container">
+      <%= form_with(url: search_foods_path, local: true, method: :get, class: "home-search-form") do |form| %>
+        <%= form.text_field :name_keyword, placeholder: "郷土料理を検索する", class: "home-search-input" %>
+        <%= form.text_field :prefecture_keyword, placeholder: "県名を検索する", class: "home-search-input" %>
         <%= form.submit "検索", class: "search-btn" %>
       <% end %>
     </div>
   </div>
 
   <div class="description">
-    <h2>このサイトについて</h2>
-    <p>このサイトは、郷土料理についての情報を提供しています。各地の郷土料理を検索し、詳細な情報を閲覧することができます。</p>
+    <h2>CONCEPT</h2>
+    <p>コロナ禍で国内の魅力を再発見された方もたくさんいらっしゃると思います。
+      日本国内には、その土地の文化、歴史、風土はもとより、それに基づいた食文化が根付いています。
+      ぜひその土地に出かけ、その土地の歴史・文化を体感しながら、その土地の美味しいものをたくさん食べてみてくださいね！</p>
   </div>
 </body>
 </html>
-
-<<<<<<< Updated upstream
-<%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :name_keyword, placeholder: "郷土料理を検索する", class: "search-input" %>
-  <%= form.text_field :prefecture_keyword, placeholder: "県名を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-=======
->>>>>>> Stashed changes
