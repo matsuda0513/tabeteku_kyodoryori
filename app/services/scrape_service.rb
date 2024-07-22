@@ -16,7 +16,7 @@ class ScrapeService
 
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.get(BASE_URL)
-    sleep 5  # ページが完全に読み込まれるまで待つ
+    sleep 4  # ページが完全に読み込まれるまで待つ
 
     doc = Nokogiri::HTML(driver.page_source)
     driver.quit
@@ -30,7 +30,7 @@ class ScrapeService
     options = Selenium::WebDriver::Chrome::Options.new
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.get(url)
-    sleep 5
+    sleep 4
 
     doc = Nokogiri::HTML(driver.page_source)
     driver.quit
@@ -41,10 +41,17 @@ class ScrapeService
     image_element = doc.at('.menu_main img')
     image_url = URI.join(url, image_element['src']).to_s
     # 修正されたimage_sourceの取得ロジック
-    image_source_element = doc.at('.dl_copy.mt10') # 正しいセレクタを使用
-    image_source = image_source_element.text.strip if image_source_element
-#main_content > div.contentWrap.secTypeA > div:nth-child(3) > div > div > div > ul > li > div > div.dl_copy.mt10
-#main_content > div.contentWrap.secTypeA > div:nth-child(3) > div > div > div > ul > li:nth-child(1) > div > div.dl_copy.mt10
+    # 最初の画像提供元を取得する
+    image_source = nil
+    doc.css('.thumb02 .js_modal01').each do |element|
+      image_source_element = element.at('.dl_copy.mt10')
+      if image_source_element
+        image_source = image_source_element.text.strip
+        break
+      end
+    end
+    # image_source_element = doc.at('.dl_copy.mt10') # 正しいセレクタを使用
+    # image_source = image_source_element.text.strip if image_source_element
     {
       name: name,
       prefecture: prefecture,
