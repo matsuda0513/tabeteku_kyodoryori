@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   def index
-    @foods = Food.all
+    @foods_by_prefecture = Food.all.group_by(&:prefecture)
   end
 
   def show
