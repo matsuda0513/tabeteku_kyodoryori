@@ -10,9 +10,9 @@ class ScrapeService
   def self.fetch_all_kyodoryouri_links
     # Chromeの設定
     options = Selenium::WebDriver::Chrome::Options.new
-    # options.add_argument('--headless')  # ヘッドレスモードで実行するオプションを追加
-    # options.add_argument('--disable-gpu')  # GPUの使用を無効化するオプションを追加
-    # options.add_argument('--window-size=1920,1080')  # ウィンドウサイズを設定するオプションを追加
+    options.add_argument('--headless')  # ヘッドレスモードで実行するオプションを追加
+    options.add_argument('--disable-gpu')  # GPUの使用を無効化するオプションを追加
+    options.add_argument('--window-size=1920,1080')  # ウィンドウサイズを設定するオプションを追加
 
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.get(BASE_URL)
@@ -28,9 +28,9 @@ class ScrapeService
 
   def self.fetch_kyodoryouri_details(url)
     options = Selenium::WebDriver::Chrome::Options.new
-    # options.add_argument('--headless')  # ヘッドレスモードで実行するオプションを追加
-    # options.add_argument('--disable-gpu')  # GPUの使用を無効化するオプションを追加
-    # options.add_argument('--window-size=1920,1080')  # ウィンドウサイズを設定するオプションを追加
+    options.add_argument('--headless')  # ヘッドレスモードで実行するオプションを追加
+    options.add_argument('--disable-gpu')  # GPUの使用を無効化するオプションを追加
+    options.add_argument('--window-size=1920,1080')  # ウィンドウサイズを設定するオプションを追加
 
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.get(url)

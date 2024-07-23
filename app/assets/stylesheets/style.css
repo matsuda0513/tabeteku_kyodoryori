@@ -87,7 +87,7 @@ header ul li a {
 
 .home-search-form input[type="submit"] {
   padding: 10px 20px; /* サブミットボタンのパディングを増やす */
-  font-size: 15px; /* サブミットボタンのフォントサイズを大きく */
+  font-size: 15px; 
 }
 
 .home-description {
@@ -186,48 +186,147 @@ header ul li a {
 /* 県ごとの食品一覧ページのスタイル */
 
 .prefecture-container {
-  padding: 20px;
+  padding: 10px 0px 0px 30px;
 }
 
 .prefecture-section {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .prefecture-section h2 {
   font-size: 2em;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   border-bottom: 2px solid #ccc;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
-.food-list {
+/* .food-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-}
+}*/
 
 .food-item {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  max-width: 300px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
-}
+  /* border: 1px solid #ddd; */
+  /* border-radius: 8px; */
+  padding: 0px;
+  font-size: 1em;
+  /* max-width: 300px; */
+  /* text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  */
+} 
 
 .food-item h3 {
-  font-size: 1.5em;
+  font-size: 17px;
+  margin-bottom: 0px;
+}
+
+/* 検索結果のスタイリング */
+.search-container {
+  text-align: center; /* コンテナ内の内容を中央揃え */
+}
+
+.search-search-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* 水平中央揃え */
+  justify-content: center; /* 水平方向の中央揃え */
+  margin-top: 80px; /* 上部マージン */
+}
+
+.search-search-input,
+.search-search-btn {
+  /* flexのアイテムの縦位置を揃える */
+  display: flex;
+  align-items: center;
+}
+
+.search-search-input {
+  padding: 8px;
+  margin: 0 3px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px; /* 検索窓の幅 */
+  margin-bottom: 8px; /* 縦の間隔 */
+}
+
+.search-search-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  margin-left: 8px; /* 横の間隔 */
+  /* ボタンの高さを指定して、inputと高さを一致させる */
+  height: 40px;
+}
+
+.search-search-btn:hover {
+  background-color: white;
+}
+
+/* 検索結果のスタイリング */
+.search-contents {
+  margin-top: 20px;
+}
+
+.search-contents ul {
+  list-style: none; /* デフォルトのリストスタイルを削除 */
+  padding: 0;
+  text-align: center;
+}
+
+.search-contents li {
+  padding: 10px;
+}
+
+/* 画像のスタイリング */
+.search-food-image {
+  width: 100%;
+  max-width: 300px; /* 画像の最大幅 */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* 画像を中央に配置 */
+}
+
+/* グリッドレイアウト */
+.search-contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-food-item {
+  flex: 1 0 30%; /* 画像を3つ並べる */
+  max-width: 30%; /* 各アイテムの最大幅 */
+  box-sizing: border-box; /* パディングとボーダーを含む幅を設定 */
+  margin-bottom: 20px; /* アイテム間の間隔 */
+  text-align: center;
+}
+
+.search-food-item a {
+  display: block;
+  text-decoration: none;
+  color: #007bff;
   margin-bottom: 10px;
 }
 
-.food-item img.food-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px; /* 画像と料理名の間にスペースを追加 */
+.search-food-item a:hover {
+  text-decoration: underline;
 }
 
-.food-item p {
-  font-size: 1em;
-  color: #666;
+@media (max-width: 768px) {
+  .search-food-item {
+    flex: 1 0 45%; /* スクリーンが小さくなったときに2列にする */
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-food-item {
+    flex: 1 0 90%; /* スクリーンが非常に小さくなったときに1列にする */
+    max-width: 90%;
+  }
 }

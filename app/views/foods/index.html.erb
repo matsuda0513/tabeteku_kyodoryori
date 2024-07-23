@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>料理一覧</title>
+  <title>食品一覧</title>
   <%= stylesheet_link_tag 'style' %>
 </head>
 <body>
@@ -27,13 +27,12 @@
 
   <div class="prefecture-container">
     <% @foods_by_prefecture.each do |prefecture, foods| %>
-      <section class="prefecture-section">
+      <section id="<%= prefecture.parameterize %>" class="prefecture-section">
         <h2><%= prefecture %></h2>
         <div class="food-list">
           <% foods.each do |food| %>
             <div class="food-item">
               <h3><%= link_to food.name, food_path(food) %></h3>
-              <img src="<%= food.image_url %>" alt="<%= food.name %>" class="food-image">
             </div>
           <% end %>
         </div>

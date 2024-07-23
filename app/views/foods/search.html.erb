@@ -1,13 +1,38 @@
-<%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :name_keyword, placeholder: "郷土料理を検索する", class: "search-input" %>
-  <%= form.text_field :prefecture_keyword, placeholder: "県名を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>検索結果</title>
+  <%= stylesheet_link_tag 'style' %>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/foods">Foods</a></li>
+        <li><a href="/search">Search</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="contents row">
+  <div class="search-container">
+    <%= form_with(url: search_foods_path, local: true, method: :get, class: "search-search-form") do |form| %>
+      <%= form.text_field :name_keyword, placeholder: "郷土料理を検索する", class: "search-search-input" %>
+      <%= form.text_field :prefecture_keyword, placeholder: "県名を検索する", class: "search-search-input" %>
+      <%= form.submit "検索", class: "search-search-btn" %>
+    <% end %>
+  </div>
+
+  <div class="search-contents">
   <% @foods.each do |food| %>
-    <li>
+    <div class="search-food-item">
       <%= link_to "#{food.name}【#{food.prefecture}】", food_path(food) %>
-    </li>
+      <%= image_tag food.image_url, alt: food.name, class: "search-food-image" if food.image_url.present? %>
+      <%# <div class="food-details"> %>
+      <%# </div> %>
+    </div>
   <% end %>
-</div>
+  </div>
+</body>
+</html>
+
