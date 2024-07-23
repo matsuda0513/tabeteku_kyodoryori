@@ -10,9 +10,9 @@ class ScrapeService
   def self.fetch_all_kyodoryouri_links
     # Chromeの設定
     options = Selenium::WebDriver::Chrome::Options.new
-    options.add_argument('--headless')  # ヘッドレスモードで実行するオプションを追加
-    options.add_argument('--disable-gpu')  # GPUの使用を無効化するオプションを追加
-    options.add_argument('--window-size=1920,1080')  # ウィンドウサイズを設定するオプションを追加
+    # options.add_argument('--headless')  # ヘッドレスモードで実行するオプションを追加
+    # options.add_argument('--disable-gpu')  # GPUの使用を無効化するオプションを追加
+    # options.add_argument('--window-size=1920,1080')  # ウィンドウサイズを設定するオプションを追加
 
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.get(BASE_URL)
@@ -28,9 +28,9 @@ class ScrapeService
 
   def self.fetch_kyodoryouri_details(url)
     options = Selenium::WebDriver::Chrome::Options.new
-    options.add_argument('--headless')  # ヘッドレスモードで実行するオプションを追加
-    options.add_argument('--disable-gpu')  # GPUの使用を無効化するオプションを追加
-    options.add_argument('--window-size=1920,1080')  # ウィンドウサイズを設定するオプションを追加
+    # options.add_argument('--headless')  # ヘッドレスモードで実行するオプションを追加
+    # options.add_argument('--disable-gpu')  # GPUの使用を無効化するオプションを追加
+    # options.add_argument('--window-size=1920,1080')  # ウィンドウサイズを設定するオプションを追加
 
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.get(url)
@@ -44,13 +44,14 @@ class ScrapeService
     history = doc.at('ul.menu_details li h3:contains("歴史・由来・関連行事") + p').text.strip
     image_element = doc.at('.menu_main img')
     image_url = URI.join(url, image_element['src']).to_s
-    # 修正されたimage_sourceの取得ロジック
-    # 最初の画像提供元を取得する
+    image_elements = doc.css('.thumb02 .js_modal01')
+    first_image_src = image_elements.first.at('.dl_img img')['src']
     image_source = nil
-    doc.css('.thumb02 .js_modal01').each do |element|
-      image_source_element = element.at('.dl_copy.mt10')
-      if image_source_element
-        image_source = image_source_element.text.strip
+
+    image_elements.each do |element|
+      if element.at('.dl_img img')['src'] == first_image_src
+        image_source_element = element.at('.dl_copy.mt10')
+        image_source = image_source_element.text.strip if image_source_element
         break
       end
     end
@@ -81,4 +82,18 @@ class ScrapeService
       )
     end
   end
+
+  # # 特定のIDを更新するための一時的なメソッド
+  # def self.fetch_and_save_kyodoryouri_by_id(id)
+  #   food = Food.find(id)
+  #   details = fetch_kyodoryouri_details(food.detail_url)
+  #   food.update!(
+  #     name: details[:name],
+  #     prefecture: details[:prefecture],
+  #     history: details[:history],
+  #     image_url: details[:image_url],
+  #     image_credit: details[:image_source],
+  #     detail_url: details[:detail_url]
+  #   )
+  # end
 end
