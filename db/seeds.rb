@@ -9,7 +9,7 @@
 require 'json'
 
 file_path = Rails.root.join('db', 'seeds', 'foods.json')
-if File.exists?(file_path)
+if File.exist?(file_path)
   foods_data = JSON.parse(File.read(file_path))
   foods_data.each do |data|
     Food.find_or_create_by!(detail_url: data['detail_url']) do |food|
