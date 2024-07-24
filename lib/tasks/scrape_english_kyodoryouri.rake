@@ -1,9 +1,9 @@
 namespace :scrape do
-  desc "Scrape and save Kyodoryouri data"
-  task kyodoryouri: :environment do
-    require_relative '../../app/services/scrape_service'
-    ScrapeService.fetch_and_save_all_kyodoryouri
-    puts "Scraping and saving Kyodoryouri data completed."
+  desc "Scrape and save English Kyodoryouri data"
+  task english_kyodoryouri: :environment do
+    require_relative '../../app/services/english_scrape_service'
+    EnglishScrapeService.fetch_and_save_all_english_kyodoryouri
+    puts "Scraping and saving English Kyodoryouri data completed."
   end
 
   # # 特定のIDを更新するための一時的なタスク
