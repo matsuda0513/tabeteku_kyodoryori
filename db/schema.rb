@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_12_121605) do
+ActiveRecord::Schema[7.0].define(version: 2024_07_23_061808) do
+  create_table "english_foods", charset: "utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "prefecture", null: false
+    t.text "history", null: false
+    t.string "image_url", null: false
+    t.string "image_credit"
+    t.string "detail_url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["detail_url"], name: "index_english_foods_on_detail_url", unique: true
+    t.index ["name"], name: "index_english_foods_on_name"
+    t.index ["prefecture"], name: "index_english_foods_on_prefecture"
+  end
+
   create_table "foods", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "prefecture", null: false
