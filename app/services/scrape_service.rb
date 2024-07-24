@@ -1,7 +1,8 @@
 require 'selenium-webdriver'
-
-# require 'nokogiri'
-# require 'open-uri'
+require 'nokogiri'
+require 'open-uri'
+require 'json'
+require 'parallel'
 
 class ScrapeService
   BASE_URL = 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/index.html'
@@ -16,7 +17,7 @@ class ScrapeService
 
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.get(BASE_URL)
-    sleep 4  # ページが完全に読み込まれるまで待つ
+    sleep 5  # ページが完全に読み込まれるまで待つ
 
     doc = Nokogiri::HTML(driver.page_source)
     driver.quit
@@ -34,7 +35,7 @@ class ScrapeService
 
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.get(url)
-    sleep 4
+    sleep 5
 
     doc = Nokogiri::HTML(driver.page_source)
     driver.quit
@@ -45,18 +46,18 @@ class ScrapeService
     image_element = doc.at('.menu_main img')
     image_url = URI.join(url, image_element['src']).to_s
     image_elements = doc.css('.thumb02 .js_modal01')
-    first_image_src = image_elements.first.at('.dl_img img')['src']
+    first_image_src = image_elements.first&.at('.dl_img img')&.[]('src')  # &.を使用してnilチェック
     image_source = nil
 
-    image_elements.each do |element|
-      if element.at('.dl_img img')['src'] == first_image_src
-        image_source_element = element.at('.dl_copy.mt10')
-        image_source = image_source_element.text.strip if image_source_element
-        break
+    if first_image_src
+      image_elements.each do |element|
+        if element.at('.dl_img img')['src'] == first_image_src
+          image_source_element = element.at('.dl_copy.mt10')
+          image_source = image_source_element.text.strip if image_source_element
+          break
+        end
       end
     end
-    # image_source_element = doc.at('.dl_copy.mt10') # 正しいセレクタを使用
-    # image_source = image_source_element.text.strip if image_source_element
     {
       name: name,
       prefecture: prefecture,
@@ -69,8 +70,9 @@ class ScrapeService
 
   def self.fetch_and_save_all_kyodoryouri
     links = fetch_all_kyodoryouri_links
-    links.each do |link|
+    Parallel.each(links, in_threads: 2) do |link|
       details = fetch_kyodoryouri_details(link[:url])
+      next unless details[:name] && details[:prefecture] && details[:history] && details[:image_url] # 必要なデータがある場合のみ保存
       food = Food.find_or_initialize_by(detail_url: details[:detail_url])
       food.update!(
         name: details[:name],
