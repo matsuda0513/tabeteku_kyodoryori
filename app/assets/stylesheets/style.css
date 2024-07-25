@@ -185,7 +185,7 @@ header ul li a {
 
 /* 県ごとの食品一覧ページのスタイル */
 
-.prefecture-container {
+/* .prefecture-container {
   padding: 10px 0px 0px 30px;
 }
 
@@ -206,19 +206,107 @@ header ul li a {
   gap: 20px;
 }*/
 
-.food-item {
+/* .food-item {
   /* border: 1px solid #ddd; */
   /* border-radius: 8px; */
-  padding: 0px;
-  font-size: 1em;
+  /* padding: 0px;
+  font-size: 1em; */
   /* max-width: 300px; */
   /* text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 } 
 
 .food-item h3 {
   font-size: 17px;
   margin-bottom: 0px;
+}
+
+.search-contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+} */
+
+.filter-container {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.filter-container label {
+  font-size: 18px; /* ラベルのフォントサイズ */
+  margin-right: 10px; /* ラベルとプルダウンの間隔 */
+}
+
+.filter-container select {
+  font-size: 18px; /* プルダウンのフォントサイズ */
+  padding: 5px; /* プルダウンの内側の余白 */
+  border: 1px solid #ccc; /* プルダウンのボーダー */
+  border-radius: 4px; /* プルダウンの角を丸くする */
+}
+
+.filter-container input[type="submit"] {
+  font-size: 18px; /* ボタンのフォントサイズ */
+  padding: 5px 10px; /* ボタンの内側の余白 */
+  border: 1px solid #ccc; /* ボタンのボーダー */
+  border-radius: 4px; /* ボタンの角を丸くする */
+  background-color: #007bff; /* ボタンの背景色 */
+  color: #fff; /* ボタンの文字色 */
+  cursor: pointer; /* ボタンにカーソルを合わせたときのスタイル */
+}
+
+.filter-container input[type="submit"]:hover {
+  background-color: #0056b3; /* ホバー時の背景色 */
+}
+
+.food-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.food-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* アイテムを中央に寄せる */
+}
+
+.prefecture-container h2{
+  margin-left: 40px;
+}
+
+
+.food-item {
+  flex: 1 0 30%; /* 画像を3つ並べる */
+  max-width: 30%; /* 各アイテムの最大幅 */
+  box-sizing: border-box; /* パディングとボーダーを含む幅を設定 */
+  margin-bottom: 20px; /* アイテム間の間隔 */
+  text-align: center;
+}
+
+.food-item a {
+  display: block;
+  text-decoration: none;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.food-item a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .food-item {
+    flex: 1 0 45%; /* スクリーンが小さくなったときに2列にする */
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .food-item {
+    flex: 1 0 90%; /* スクリーンが非常に小さくなったときに1列にする */
+    max-width: 90%;
+  }
 }
 
 /* 検索結果のスタイリング */

@@ -86,3 +86,5 @@ gem 'devise'
 gem 'mechanize'
 
 gem 'parallel'
+
+gem 'active_hash'
