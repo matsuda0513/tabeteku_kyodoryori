@@ -185,7 +185,7 @@ header ul li a {
 
 /* 県ごとの食品一覧ページのスタイル */
 
-.prefecture-container {
+/* .prefecture-container {
   padding: 10px 0px 0px 30px;
 }
 
@@ -206,19 +206,75 @@ header ul li a {
   gap: 20px;
 }*/
 
-.food-item {
+/* .food-item {
   /* border: 1px solid #ddd; */
   /* border-radius: 8px; */
-  padding: 0px;
-  font-size: 1em;
+  /* padding: 0px;
+  font-size: 1em; */
   /* max-width: 300px; */
   /* text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 } 
 
 .food-item h3 {
   font-size: 17px;
   margin-bottom: 0px;
+}
+
+.search-contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+} */
+
+.filter-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.food-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.food-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.food-item {
+  flex: 1 0 30%; /* 画像を3つ並べる */
+  max-width: 30%; /* 各アイテムの最大幅 */
+  box-sizing: border-box; /* パディングとボーダーを含む幅を設定 */
+  margin-bottom: 20px; /* アイテム間の間隔 */
+  text-align: center;
+}
+
+.food-item a {
+  display: block;
+  text-decoration: none;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.food-item a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .food-item {
+    flex: 1 0 45%; /* スクリーンが小さくなったときに2列にする */
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .food-item {
+    flex: 1 0 90%; /* スクリーンが非常に小さくなったときに1列にする */
+    max-width: 90%;
+  }
 }
 
 /* 検索結果のスタイリング */
