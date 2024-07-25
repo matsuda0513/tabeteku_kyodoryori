@@ -97,6 +97,39 @@ header ul li a {
   color: black;
 }
 
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 100%;
+  display: none;
+}
+
+.slider .prev-button,
+.slider .next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.slider .prev-button {
+  left: 10px;
+}
+
+.slider .next-button {
+  right: 10px;
+}
+
 /* 詳細ページ専用のスタイル */
 .show-container {
   margin-top: 60px; /* ヘッダーの下に内容を表示 */
@@ -184,48 +217,6 @@ header ul li a {
 }
 
 /* 県ごとの食品一覧ページのスタイル */
-
-/* .prefecture-container {
-  padding: 10px 0px 0px 30px;
-}
-
-.prefecture-section {
-  margin-bottom: 30px;
-}
-
-.prefecture-section h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 5px;
-}
-
-/* .food-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}*/
-
-/* .food-item {
-  /* border: 1px solid #ddd; */
-  /* border-radius: 8px; */
-  /* padding: 0px;
-  font-size: 1em; */
-  /* max-width: 300px; */
-  /* text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-} 
-
-.food-item h3 {
-  font-size: 17px;
-  margin-bottom: 0px;
-}
-
-.search-contents {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-} */
 
 .filter-container {
   margin-top: 70px;

@@ -3,6 +3,10 @@
 <head>
   <title>トップページ</title>
   <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
 </head>
 <body>
   <div class="background"></div>
@@ -17,7 +21,22 @@
 
   <div class="home-container">
     <div class="home-image-container">
-      <img src="/images/background.jpg" alt="背景画像" class="home-background-image">
+      <div class="slider">
+        <img src="/images/background.jpg" alt="スライド1">
+        <img src="/images/1_ehime_13_1.jpg" alt="スライド2">
+        <img src="/images/2_ibaraki_17_1.jpg" alt="スライド3">
+        <img src="/images/3_hokkaido_20_2.jpg" alt="スライド4">
+        <img src="/images/4_tottori_19_1.jpg" alt="スライド5">
+        <img src="/images/5_miyagi_2_1.jpg" alt="スライド6">
+        <img src="/images/6_miyazaki_2_2.jpg" alt="スライド7">
+        <img src="/images/7_nigata_1_1.jpg" alt="スライド8">
+        <img src="/images/8_wakayama_19_2.jpg" alt="スライド9">
+        <img src="/images/9_mie_2_1.jpg" alt="スライド10">
+        <img src="/images/10_kumamoto_13_1.jpg" alt="スライド11">
+        <!-- Add more images as needed -->
+        <button class="prev-button">Prev</button>
+        <button class="next-button">Next</button>
+      </div>
     </div>
 
     <div class="home-logo">
