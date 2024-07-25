@@ -3,14 +3,15 @@ class FoodsController < ApplicationController
     prefecture_order = Prefecture.all.map(&:name)
 
     if params[:prefecture].present? && params[:prefecture] != "すべて"
-      @foods = Food.where(prefecture: params[:prefecture])
+      selected_prefecture = params[:prefecture]
+      @foods = Food.where(prefecture: selected_prefecture)
+      @foods_by_prefecture = { selected_prefecture => @foods }
     else
       @foods = Food.all
-    end
-
-    foods_grouped_by_prefecture = @foods.group_by(&:prefecture)
-    @foods_by_prefecture = prefecture_order.each_with_object({}) do |prefecture, hash|
-      hash[prefecture] = foods_grouped_by_prefecture[prefecture] || []
+      foods_grouped_by_prefecture = @foods.group_by(&:prefecture)
+      @foods_by_prefecture = prefecture_order.each_with_object({}) do |prefecture, hash|
+        hash[prefecture] = foods_grouped_by_prefecture[prefecture] || []
+      end
     end
   end
 
