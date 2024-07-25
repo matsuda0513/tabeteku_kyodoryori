@@ -232,6 +232,32 @@ header ul li a {
   text-align: center;
 }
 
+.filter-container label {
+  font-size: 18px; /* ラベルのフォントサイズ */
+  margin-right: 10px; /* ラベルとプルダウンの間隔 */
+}
+
+.filter-container select {
+  font-size: 18px; /* プルダウンのフォントサイズ */
+  padding: 5px; /* プルダウンの内側の余白 */
+  border: 1px solid #ccc; /* プルダウンのボーダー */
+  border-radius: 4px; /* プルダウンの角を丸くする */
+}
+
+.filter-container input[type="submit"] {
+  font-size: 18px; /* ボタンのフォントサイズ */
+  padding: 5px 10px; /* ボタンの内側の余白 */
+  border: 1px solid #ccc; /* ボタンのボーダー */
+  border-radius: 4px; /* ボタンの角を丸くする */
+  background-color: #007bff; /* ボタンの背景色 */
+  color: #fff; /* ボタンの文字色 */
+  cursor: pointer; /* ボタンにカーソルを合わせたときのスタイル */
+}
+
+.filter-container input[type="submit"]:hover {
+  background-color: #0056b3; /* ホバー時の背景色 */
+}
+
 .food-image {
   max-width: 100%;
   height: auto;
@@ -242,7 +268,13 @@ header ul li a {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center; /* アイテムを中央に寄せる */
 }
+
+.prefecture-container h2{
+  margin-left: 40px;
+}
+
 
 .food-item {
   flex: 1 0 30%; /* 画像を3つ並べる */
