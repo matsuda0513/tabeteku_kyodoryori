@@ -1,5 +1,7 @@
 export default function initSlider() {
   const slides = document.querySelectorAll('.slider img');
+  if (slides.length === 0) return; // スライドがない場合は初期化しない
+
   let currentSlide = 0;
   let autoSlideInterval;
 
@@ -27,17 +29,33 @@ export default function initSlider() {
     clearInterval(autoSlideInterval);
   }
 
-  document.querySelector('.next-button').addEventListener('click', () => {
-    stopAutoSlide();
-    nextSlide();
-    startAutoSlide();
-  });
+  const nextButton = document.querySelector('.next-button');
+  const prevButton = document.querySelector('.prev-button');
+  if (nextButton && prevButton) {
+    nextButton.addEventListener('click', () => {
+      stopAutoSlide();
+      nextSlide();
+      startAutoSlide();
+    });
 
-  document.querySelector('.prev-button').addEventListener('click', () => {
-    stopAutoSlide();
-    previousSlide();
-    startAutoSlide();
-  });
+    prevButton.addEventListener('click', () => {
+      stopAutoSlide();
+      previousSlide();
+      startAutoSlide();
+    });
+  }
+
+  // document.querySelector('.next-button').addEventListener('click', () => {
+  //   stopAutoSlide();
+  //   nextSlide();
+  //   startAutoSlide();
+  // });
+
+  // document.querySelector('.prev-button').addEventListener('click', () => {
+  //   stopAutoSlide();
+  //   previousSlide();
+  //   startAutoSlide();
+  // });
 
   slides[currentSlide].style.display = 'block'; // 初期スライドを表示
   startAutoSlide(); // 自動スライドを開始

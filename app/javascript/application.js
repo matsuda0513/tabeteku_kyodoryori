@@ -4,6 +4,7 @@ import "controllers"
 import initSlider from "components/slider"
 
 // 初期化
-document.addEventListener('DOMContentLoaded', () => {
+// Turboのロードイベントにリスンしてスライダーを初期化
+document.addEventListener('turbo:load', () => {
   initSlider();
 });

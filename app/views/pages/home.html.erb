@@ -11,13 +11,27 @@
 <body>
   <div class="background"></div>
 
-  <header>
+  <header class="common-header">
     <nav>
       <ul>
         <li><%= link_to '郷土料理一覧', foods_path %></li>
       </ul>
     </nav>
   </header>
+  
+  <div class="home-header">
+    <div class="home-logo">
+    <img src="/images/logov2.png" alt="ロゴ">
+  </div>
+
+    <div class="home-search-form-container">
+      <%= form_with(url: search_foods_path, local: true, method: :get, class: "home-search-form") do |form| %>
+        <%= form.text_field :name_keyword, placeholder: "郷土料理を検索する", class: "home-search-input" %>
+        <%= form.text_field :prefecture_keyword, placeholder: "県名を検索する", class: "home-search-input" %>
+        <%= form.submit "検索", class: "search-btn" %>
+      <% end %>
+    </div>
+  </div>
 
   <div class="home-container">
     <div class="home-image-container">
@@ -38,21 +52,9 @@
         <button class="next-button">Next</button>
       </div>
     </div>
-
-    <div class="home-logo">
-    <img src="/images/logov2.png" alt="ロゴ">
-    </div>
-
-    <div class="home-search-form-container">
-      <%= form_with(url: search_foods_path, local: true, method: :get, class: "home-search-form") do |form| %>
-        <%= form.text_field :name_keyword, placeholder: "郷土料理を検索する", class: "home-search-input" %>
-        <%= form.text_field :prefecture_keyword, placeholder: "県名を検索する", class: "home-search-input" %>
-        <%= form.submit "検索", class: "search-btn" %>
-      <% end %>
-    </div>
   </div>
 
-  <div class="description">
+  <div class="home-description">
     <h2>CONCEPT</h2>
     <p>コロナ禍で国内の魅力を再発見された方もたくさんいらっしゃると思います。
       日本国内には、その土地の文化、歴史、風土はもとより、それに基づいた食文化が根付いています。
