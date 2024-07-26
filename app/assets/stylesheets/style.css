@@ -4,51 +4,84 @@ body {
   font-family: Arial, sans-serif;
 }
 
-header {
-  position: fixed;
-  top: 0;
+.common-header {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 10px;
-  text-align: right;
-  z-index: 10; /* ヘッダーが画像よりも上に表示されるように */
+  text-align: center;
 }
 
-header nav {
-  padding-right: 10px; /* 右から10px内側に寄せる */
+.common-header nav {
+  display: flex;
+  justify-content: right;
+  padding-right: 10px;
 }
 
-header ul {
+.common-header ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-header ul li {
+.common-header ul li {
   display: inline;
   margin-right: 15px;
 }
 
-header ul li a {
+.common-header ul li a {
   color: white;
   text-decoration: none;
 }
 
 /* トップページ専用のスタイル */
-.home-container {
-  position: relative;
-  text-align: center;
-  color: white;
-  padding: 50px 20px;
-  height: 100vh;
+
+.home-header {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  padding: -100px 0;
+}
+
+.home-logo {
+  margin: -50px 20px 0px 0px;
+}
+
+.home-logo img {
+  height: 320px; /* ロゴの高さを調整 */
+  width: auto; /* アスペクト比を保ったまま幅を自動調整 */
+}
+
+.home-search-form-container {
+  display: flex;
+  align-items: center;
+  /* margin-left: auto; フォームを右寄せにする */
+  /* margin-top: -200px;
+  transform: scale(1); サイズを大きく */
+}
+
+.home-search-form {
+  display: flex;
   align-items: center;
 }
 
-.home-background-image {
+.home-search-form input {
+  padding: 5px; /* 入力フィールドのパディングを増やす */
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-btn {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.background {
   position: absolute;
   top: 0;
   left: 0;
@@ -58,44 +91,67 @@ header ul li a {
   z-index: -1; /* 背景画像を最背面に */
 }
 
-.home-logo {
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -50px;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 100%;
+  display: none;
+}
+
+.slider .prev-button,
+.slider .next-button {
   position: absolute;
-  top: -50px;
-  /* left: 50%;
-  transform: translateX(-50%);
-  z-index: 1; ロゴを背景画像の上に表示 */
-  margin-bottom: 0px; /* ロゴとフォームの間のスペースを調整 */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.home-logo img {
-  max-width: 90%;
-  height: auto;
+.slider .prev-button {
+  left: 10px;
 }
 
-.home-search-form-container {
-  position: relative; /* デフォルトの位置付け */
-  margin-top: -200px;
-  transform: scale(1); /* サイズを大きく */
+.slider .next-button {
+  right: 10px;
 }
 
-.home-search-form input[type="text"] {
-  width: 30%; /* 入力フィールドの幅を広げる */
-  padding: 10px; /* 入力フィールドのパディングを増やす */
-  font-size: 15px; /* 入力フィールドのフォントサイズを大きく */
-  margin: 10px 0; /* 入力フィールドの上下マージンを増やす */
-}
+@media (max-width: 768px) {
+  .home-header {
+    flex-direction: column;
+    /* align-items: flex-start; */
+  }
 
-.home-search-form input[type="submit"] {
-  padding: 10px 20px; /* サブミットボタンのパディングを増やす */
-  font-size: 15px; 
+  .home-logo {
+    margin-bottom: 10px;
+  }
+
+  .home-search-form-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home-search-form {
+    width: 100%;
+  }
 }
 
 .home-description {
-  margin-top: 100vh;
   padding: 50px 20px;
   background-color: rgba(255, 255, 255, 0.9);
   color: black;
 }
+
 
 /* 詳細ページ専用のスタイル */
 .show-container {
@@ -184,48 +240,6 @@ header ul li a {
 }
 
 /* 県ごとの食品一覧ページのスタイル */
-
-/* .prefecture-container {
-  padding: 10px 0px 0px 30px;
-}
-
-.prefecture-section {
-  margin-bottom: 30px;
-}
-
-.prefecture-section h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 5px;
-}
-
-/* .food-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}*/
-
-/* .food-item {
-  /* border: 1px solid #ddd; */
-  /* border-radius: 8px; */
-  /* padding: 0px;
-  font-size: 1em; */
-  /* max-width: 300px; */
-  /* text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-} 
-
-.food-item h3 {
-  font-size: 17px;
-  margin-bottom: 0px;
-}
-
-.search-contents {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-} */
 
 .filter-container {
   margin-top: 70px;
