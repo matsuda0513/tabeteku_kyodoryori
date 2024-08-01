@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TopPage</title>
+  <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+<body>
+  <div class="background"></div>
+
+  <header class="common-header">
+    <nav>
+      <ul>
+        <li><%= link_to 'list', english_foods_path %></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="home-header">
+    <div class="home-logo">
+    <img src="/images/logov2.png" alt="logo">
+  </div>
+
+    <div class="home-search-form-container">
+      <%= form_with(url: search_english_foods_path, local: true, method: :get, class: "home-search-form") do |form| %>
+        <%= form.text_field :name_keyword, placeholder: "Search for Regional Cuisine", class: "home-search-input" %>
+        <%= form.text_field :prefecture_keyword, placeholder: "Search by Prefecture", class: "home-search-input" %>
+        <%= form.submit "Search", class: "search-btn" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="home-container">
+    <div class="home-image-container">
+      <div class="slider">
+        <img src="/images/background.jpg" alt="Slide1">
+        <img src="/images/1_ehime_13_1.jpg" alt="Slide2">
+        <img src="/images/2_ibaraki_17_1.jpg" alt="Slide3">
+        <img src="/images/3_hokkaido_20_2.jpg" alt="Slide4">
+        <img src="/images/4_tottori_19_1.jpg" alt="Slide5">
+        <img src="/images/5_miyagi_2_1.jpg" alt="Slide6">
+        <img src="/images/6_miyazaki_2_2.jpg" alt="Slide7">
+        <img src="/images/7_nigata_1_1.jpg" alt="Slide8">
+        <img src="/images/8_wakayama_19_2.jpg" alt="Slide9">
+        <img src="/images/9_mie_2_1.jpg" alt="Slide10">
+        <img src="/images/10_kumamoto_13_1.jpg" alt="Slide11">
+        <!-- Add more images as needed -->
+        <button class="prev-button">Prev</button>
+        <button class="next-button">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-description">
+    <h2>CONCEPT</h2>
+    <p>During the COVID-19 pandemic, many people have rediscovered the charm of domestic destinations. Japan is home to a rich tapestry of local culture, history, and natural environment, all of which contribute to its unique food culture. We encourage you to visit these regions, immerse yourself in their history and culture, and enjoy the delicious local dishes they have to offer!</p>
+  </div>
+</body>
+</html>
