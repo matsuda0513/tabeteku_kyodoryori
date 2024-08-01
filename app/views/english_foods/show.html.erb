@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>郷土料理詳細</title>
+  <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <header class="common-header">
+    <nav>
+      <ul>
+        <li><%= link_to 'home', english_home_path %></li>
+        <li><%= link_to 'list', english_foods_path %></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="show-container">
+    <div class="show-top">
+      <div class="show-image">
+        <%= image_tag @kyodoryouri_info[:image_url] if @kyodoryouri_info[:image_url].present? %>
+        <p><%= @kyodoryouri_info[:image_source] %></p>
+      </div>
+      <div class="show-details">
+        <h1><%= @kyodoryouri_info[:name] %></h1>
+        <p><strong>Prefecture:</strong> <%= @kyodoryouri_info[:prefecture] %></p>
+        <div class="show-links">
+          <div class="link-item">
+            <span class="link-text">    Dine Out！</span>
+            <%= link_to "Search on Tabelog", @tabelog_url, class: "btn btn-tabelog", target: "_blank" %>
+          </div>
+          <div class="link-item">
+            <span class="link-text">Cook at Home！</span>
+            <%= link_to "Search on Cookpad", @cookpad_url, class: "btn btn-cookpad", target: "_blank" %>
+          </div>
+          <div class="link-item">
+            <span class="link-text">View Photos！</span>
+            <%= link_to "Search on Instagram", @instagram_url, class: "btn btn-instagram", target: "_blank" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="show-bottom">
+      <h2>History/origin/related events</h2>
+      <p><%= @kyodoryouri_info[:history] %></p>
+    </div>
+  </div>
+</body>
+</html>

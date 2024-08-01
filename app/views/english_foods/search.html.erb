@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Results</title>
+  <%= stylesheet_link_tag 'style' %>
+</head>
+<body>
+  <header class="common-header">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/english_foods">list</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="search-container">
+    <%= form_with(url: search_english_foods_path, local: true, method: :get, class: "search-search-form") do |form| %>
+      <%= form.text_field :name_keyword, placeholder: "Search for Regional Cuisine", class: "search-search-input" %>
+      <%= form.text_field :prefecture_keyword, placeholder: "Search by Prefecture", class: "search-search-input" %>
+      <%= form.submit "Search", class: "search-search-btn" %>
+    <% end %>
+  </div>
+
+  <div class="search-contents">
+  <% @foods.each do |food| %>
+    <div class="search-food-item">
+      <%= link_to "#{food.name}【#{food.prefecture}】", english_food_path(food) %>
+      <%= image_tag food.image_url, alt: food.name, class: "search-food-image" if food.image_url.present? %>
+    </div>
+  <% end %>
+  </div>
+</body>
+</html>
