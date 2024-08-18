@@ -15,4 +15,8 @@ class Food < ApplicationRecord
     end
     foods
   end
+
+  def image_filename
+    URI.parse(image_url).path.split('/').last
+  end
 end
