@@ -21,3 +21,19 @@ if File.exist?(file_path)
     end
   end
 end
+
+english_foods_file_path = Rails.root.join('db', 'seeds', 'english_foods.json')
+if File.exist?(english_foods_file_path)
+  english_foods_data = JSON.parse(File.read(english_foods_file_path))
+  english_foods_data.each do |data|
+    EnglishFood.find_or_create_by!(detail_url: data['detail_url']) do |english_food|
+      english_food.name = data['name']
+      english_food.prefecture = data['prefecture']
+      english_food.history = data['history']
+      english_food.image_url = data['image_url']
+      english_food.image_credit = data['image_credit']
+      english_food.food_id = data['food_id']
+      english_food.food_name = data['food_name']
+    end
+  end
+end
