@@ -52,6 +52,15 @@ body {
   width: auto; /* アスペクト比を保ったまま幅を自動調整 */
 }
 
+.home-logo-e {
+  margin: -120px 10px 0px 0px;
+}
+
+.home-logo-e img {
+  height: 420px; /* ロゴの高さを調整 */
+  width: auto; /* アスペクト比を保ったまま幅を自動調整 */
+}
+
 .home-search-form-container {
   display: flex;
   align-items: center;
