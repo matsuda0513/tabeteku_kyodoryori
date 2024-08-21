@@ -32,34 +32,35 @@
 # 機能一覧
   ## 郷土料理検索(日本語、ローマ字)  
   -日本語検索  
-  [![Image from Gyazo](https://i.gyazo.com/365d42a078f3268eddacef3b0f1971ee.gif)](https://gyazo.com/365d42a078f3268eddacef3b0f1971ee)  
+[![Image from Gyazo](https://i.gyazo.com/365d42a078f3268eddacef3b0f1971ee.gif)](https://gyazo.com/365d42a078f3268eddacef3b0f1971ee)  
 
   -ローマ字検索  
-  [![Image from Gyazo](https://i.gyazo.com/7ca8250b765744d01dc1c22c880242f4.gif)](https://gyazo.com/7ca8250b765744d01dc1c22c880242f4)  
+[![Image from Gyazo](https://i.gyazo.com/7ca8250b765744d01dc1c22c880242f4.gif)](https://gyazo.com/7ca8250b765744d01dc1c22c880242f4)  
 
   ## 郷土料理一覧(プルダウンで県別一覧表示)  
   -日本語  
-  [![Image from Gyazo](https://i.gyazo.com/9d1ed879fceb4088ba6b2676ce212e4b.gif)](https://gyazo.com/9d1ed879fceb4088ba6b2676ce212e4b)  
+[![Image from Gyazo](https://i.gyazo.com/9d1ed879fceb4088ba6b2676ce212e4b.gif)](https://gyazo.com/9d1ed879fceb4088ba6b2676ce212e4b)  
 
   -英語  
-  [![Image from Gyazo](https://i.gyazo.com/3627559d7637fb0eb23dfee9f50154a0.gif)](https://gyazo.com/3627559d7637fb0eb23dfee9f50154a0)  
+[![Image from Gyazo](https://i.gyazo.com/3627559d7637fb0eb23dfee9f50154a0.gif)](https://gyazo.com/3627559d7637fb0eb23dfee9f50154a0)  
 
   ## 郷土料理詳細  
    ### レストラン検索（食べログ連携）  
     -日本語  
-    [![Image from Gyazo](https://i.gyazo.com/7ba7b7f4b9c513d2b1392ed7d57b2ef6.gif)](https://gyazo.com/7ba7b7f4b9c513d2b1392ed7d57b2ef6)  
+[![Image from Gyazo](https://i.gyazo.com/7ba7b7f4b9c513d2b1392ed7d57b2ef6.gif)](https://gyazo.com/7ba7b7f4b9c513d2b1392ed7d57b2ef6)  
 
     -英語  
-    [![Image from Gyazo](https://i.gyazo.com/076de21c77ab31a052d869b30f7933b6.gif)](https://gyazo.com/076de21c77ab31a052d869b30f7933b6)  
+[![Image from Gyazo](https://i.gyazo.com/076de21c77ab31a052d869b30f7933b6.gif)](https://gyazo.com/076de21c77ab31a052d869b30f7933b6)  
 
    ### レシピ検索(Cookpad連携)  
     -日本語  
-    [![Image from Gyazo](https://i.gyazo.com/0827235f26d5e0663b040ff3ab26f31f.gif)](https://gyazo.com/0827235f26d5e0663b040ff3ab26f31f)  
+[![Image from Gyazo](https://i.gyazo.com/0827235f26d5e0663b040ff3ab26f31f.gif)](https://gyazo.com/0827235f26d5e0663b040ff3ab26f31f)  
 
     -英語  
-    [![Image from Gyazo](https://i.gyazo.com/fd5cec8d002cc74d27fbdf90e4fd7095.gif)](https://gyazo.com/fd5cec8d002cc74d27fbdf90e4fd7095) 
-  
-   ### 写真検索(Instagram連携)
+[![Image from Gyazo](https://i.gyazo.com/fd5cec8d002cc74d27fbdf90e4fd7095.gif)](https://gyazo.com/fd5cec8d002cc74d27fbdf90e4fd7095) 
+
+   ### 写真検索(Instagram連携)  
+   
 
 
 
