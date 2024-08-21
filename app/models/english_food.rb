@@ -8,10 +8,10 @@ class EnglishFood < ApplicationRecord
   def self.search(name_keyword, prefecture_keyword)
     foods = EnglishFood.all
     if name_keyword.present?
-      foods = foods.where('name LIKE ?', "%#{name_keyword}%")
+      foods = foods.where('LOWER(name) LIKE ?', "%#{name_keyword.downcase}%")
     end
     if prefecture_keyword.present?
-      foods = foods.where('prefecture LIKE ?', "%#{prefecture_keyword}%")
+      foods = foods.where('LOWER(prefecture) LIKE ?', "%#{prefecture_keyword.downcase}%")
     end
     foods
   end
