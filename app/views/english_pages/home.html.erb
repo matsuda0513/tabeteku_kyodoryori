@@ -14,7 +14,8 @@
   <header class="common-header">
     <nav>
       <ul>
-        <li><%= link_to 'list', english_foods_path %></li>
+        <li><%= link_to 'Cuisine List', english_foods_path %></li>
+        <li><%= link_to 'Japanese', root_path %></li>
       </ul>
     </nav>
   </header>
@@ -26,7 +27,7 @@
 
     <div class="home-search-form-container">
       <%= form_with(url: search_english_foods_path, local: true, method: :get, class: "home-search-form") do |form| %>
-        <%= form.text_field :name_keyword, placeholder: "Search for Regional Cuisine", class: "home-search-input" %>
+        <%= form.text_field :name_keyword, placeholder: "Search for Cuisine", class: "home-search-input" %>
         <%= form.text_field :prefecture_keyword, placeholder: "Search by Prefecture", class: "home-search-input" %>
         <%= form.submit "Search", class: "search-btn" %>
       <% end %>
@@ -56,7 +57,7 @@
 
   <div class="home-description">
     <h2>CONCEPT</h2>
-    <p>During the COVID-19 pandemic, many people have rediscovered the charm of domestic destinations. Japan is home to a rich tapestry of local culture, history, and natural environment, all of which contribute to its unique food culture. We encourage you to visit these regions, immerse yourself in their history and culture, and enjoy the delicious local dishes they have to offer!</p>
+    <p>Japan is known worldwide for sushi and ramen, but there’s so much more to discover. Each region of Japan has its own unique cuisine, shaped by the local climate and traditions. We invite you to explore these regions, experience their rich history and culture, and savor the authentic local dishes that truly represent the heart of Japan. Whether you’re visiting for the first time or have been here before, there’s always something new and delicious to discover. Don’t miss the opportunity to taste these regional specialties right where they originated!</p>
   </div>
 </body>
 </html>
