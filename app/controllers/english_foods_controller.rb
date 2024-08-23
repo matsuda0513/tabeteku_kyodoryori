@@ -42,6 +42,22 @@ class EnglishFoodsController < ApplicationController
 
   def search
     @prefectures = EnglishPrefecture.all
-    @foods = EnglishFood.search(params[:name_keyword], params[:prefecture_keyword])
+    # 最初に選択された都道府県で絞り込み
+    if params[:prefecture].present? && params[:prefecture] != "すべて"
+      @foods = EnglishFood.where(prefecture: params[:prefecture])
+    else
+      @foods = EnglishFood.all
+    end
+
+    # 料理名でさらにフィルタリング
+    if params[:name_keyword].present?
+      keyword = "%#{params[:name_keyword]}%"
+      @foods = @foods.where('name LIKE ?', keyword)
+    end
+
+    # 都道府県ごとにグループ化
+    @foods_by_prefecture = @prefectures.each_with_object({}) do |prefecture, hash|
+      hash[prefecture.name] = @foods.select { |food| food.prefecture == prefecture.name }
+    end
   end
 end
