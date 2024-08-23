@@ -44,7 +44,7 @@ class EnglishFoodsController < ApplicationController
     @prefectures = EnglishPrefecture.all
     # 最初に選択された都道府県で絞り込み
     if params[:prefecture].present? && params[:prefecture] != "すべて"
-      @foods = EnglishFood.where(prefecture: params[:prefecture])
+      @foods = EnglishFood.where('LOWER(prefecture) = ?', params[:prefecture].downcase)
     else
       @foods = EnglishFood.all
     end
@@ -52,7 +52,7 @@ class EnglishFoodsController < ApplicationController
     # 料理名でさらにフィルタリング
     if params[:name_keyword].present?
       keyword = "%#{params[:name_keyword]}%"
-      @foods = @foods.where('name LIKE ?', keyword)
+      @foods = @foods.where('LOWER(name) LIKE ?', keyword)
     end
 
     # 都道府県ごとにグループ化
