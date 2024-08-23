@@ -28,7 +28,8 @@
     <div class="home-search-form-container">
       <%= form_with(url: search_english_foods_path, local: true, method: :get, class: "home-search-form") do |form| %>
         <%= form.text_field :name_keyword, placeholder: "Search for Cuisine", class: "home-search-input" %>
-        <%= form.text_field :prefecture_keyword, placeholder: "Search by Prefecture", class: "home-search-input" %>
+        <%= form.label :prefecture, "Prefecture:" %>
+        <%= form.select :prefecture, options_from_collection_for_select(@prefectures, :name, :name, selected: params[:prefecture]), { include_blank: "ALL" }, class: "home-search-input" %>
         <%= form.submit "Search", class: "search-btn" %>
       <% end %>
     </div>
