@@ -35,6 +35,7 @@ class FoodsController < ApplicationController
     end
 
   def search
+    @prefectures = Prefecture.all
     @foods = Food.search(params[:name_keyword], params[:prefecture_keyword])
   end
 end

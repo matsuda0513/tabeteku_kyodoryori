@@ -81,8 +81,15 @@ body {
   border-radius: 4px;
 }
 
+.home-search-form select {
+  padding: 5px; /* 入力フィールドのパディングを増やす */
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 .search-btn {
   padding: 5px 10px;
+  margin-left: 10px;
   background-color: #007bff;
   color: #fff;
   border: none;

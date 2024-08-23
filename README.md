@@ -76,3 +76,5 @@
 # 画面遷移図
   ![test_whitev3](https://github.com/user-attachments/assets/c3dc7ed8-5fc8-4f65-8853-e4123685ef12)
 
+# 制作期間
+  約3週間
