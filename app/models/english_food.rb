@@ -17,9 +17,8 @@ class EnglishFood < ApplicationRecord
   end
 
   def image_filename
-  # 最後の/部分のデータを抽出し、拡張子を除く
   filename = File.basename(URI.parse(image_url).path, ".*")
-  filename.gsub!('-1', '') if filename.include?('-1') # "-1" を除去
+  filename.gsub!('-1', '') if filename.include?('-1') 
   filename
   end
 end

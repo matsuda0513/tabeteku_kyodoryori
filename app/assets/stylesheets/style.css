@@ -48,8 +48,8 @@ body {
 }
 
 .home-logo img {
-  height: 320px; /* ロゴの高さを調整 */
-  width: auto; /* アスペクト比を保ったまま幅を自動調整 */
+  height: 320px; 
+  width: auto;
 }
 
 .home-logo-e {
@@ -57,16 +57,13 @@ body {
 }
 
 .home-logo-e img {
-  height: 420px; /* ロゴの高さを調整 */
-  width: auto; /* アスペクト比を保ったまま幅を自動調整 */
+  height: 420px; 
+  width: auto; 
 }
 
 .home-search-form-container {
   display: flex;
   align-items: center;
-  /* margin-left: auto; フォームを右寄せにする */
-  /* margin-top: -200px;
-  transform: scale(1); サイズを大きく */
 }
 
 .home-search-form {
@@ -75,14 +72,14 @@ body {
 }
 
 .home-search-form input {
-  padding: 5px; /* 入力フィールドのパディングを増やす */
+  padding: 5px; 
   margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .home-search-form select {
-  padding: 5px; /* 入力フィールドのパディングを増やす */
+  padding: 5px; 
   margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -104,7 +101,7 @@ body {
   width: 100%;
   height: 100%;
   background-size: cover;
-  z-index: -1; /* 背景画像を最背面に */
+  z-index: -1; 
 }
 
 .slider {
@@ -145,7 +142,6 @@ body {
 @media (max-width: 768px) {
   .home-header {
     flex-direction: column;
-    /* align-items: flex-start; */
   }
 
   .home-logo {
@@ -171,7 +167,7 @@ body {
 
 /* 詳細ページ専用のスタイル */
 .show-container {
-  margin-top: 60px; /* ヘッダーの下に内容を表示 */
+  margin-top: 60px;
   padding: 20px;
   max-width: 80%;
   margin-left: auto;
@@ -214,9 +210,8 @@ body {
 }
 
 .show-links .link-text {
-  min-width: 160px; /* 固定幅を指定 */
+  min-width: 160px; 
   text-align: center;
-  /* font-weight: bold; */
 }
 
 .show-links .btn {
@@ -226,7 +221,7 @@ body {
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  min-width: 200px; /* ボタンの最小幅を統一 */
+  min-width: 200px; 
   text-align: center;
 }
 
@@ -263,29 +258,29 @@ body {
 }
 
 .filter-container label {
-  font-size: 18px; /* ラベルのフォントサイズ */
-  margin-right: 10px; /* ラベルとプルダウンの間隔 */
+  font-size: 18px; 
+  margin-right: 10px; 
 }
 
 .filter-container select {
-  font-size: 18px; /* プルダウンのフォントサイズ */
-  padding: 5px; /* プルダウンの内側の余白 */
-  border: 1px solid #ccc; /* プルダウンのボーダー */
-  border-radius: 4px; /* プルダウンの角を丸くする */
+  font-size: 18px; 
+  padding: 5px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
 }
 
 .filter-container input[type="submit"] {
-  font-size: 18px; /* ボタンのフォントサイズ */
-  padding: 5px 10px; /* ボタンの内側の余白 */
-  border: 1px solid #ccc; /* ボタンのボーダー */
-  border-radius: 4px; /* ボタンの角を丸くする */
-  background-color: #007bff; /* ボタンの背景色 */
-  color: #fff; /* ボタンの文字色 */
-  cursor: pointer; /* ボタンにカーソルを合わせたときのスタイル */
+  font-size: 18px; 
+  padding: 5px 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  background-color: #007bff; 
+  color: #fff; 
+  cursor: pointer; 
 }
 
 .filter-container input[type="submit"]:hover {
-  background-color: #0056b3; /* ホバー時の背景色 */
+  background-color: #0056b3; 
 }
 
 .food-image {
@@ -298,7 +293,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center; /* アイテムを中央に寄せる */
+  justify-content: center; 
 }
 
 .prefecture-container h2{
@@ -307,10 +302,10 @@ body {
 
 
 .food-item {
-  flex: 1 0 30%; /* 画像を3つ並べる */
-  max-width: 30%; /* 各アイテムの最大幅 */
-  box-sizing: border-box; /* パディングとボーダーを含む幅を設定 */
-  margin-bottom: 20px; /* アイテム間の間隔 */
+  flex: 1 0 30%; 
+  max-width: 30%; 
+  box-sizing: border-box; 
+  margin-bottom: 20px; 
   text-align: center;
 }
 
@@ -327,34 +322,33 @@ body {
 
 @media (max-width: 768px) {
   .food-item {
-    flex: 1 0 45%; /* スクリーンが小さくなったときに2列にする */
+    flex: 1 0 45%; 
     max-width: 45%;
   }
 }
 
 @media (max-width: 480px) {
   .food-item {
-    flex: 1 0 90%; /* スクリーンが非常に小さくなったときに1列にする */
+    flex: 1 0 90%; 
     max-width: 90%;
   }
 }
 
 /* 検索結果のスタイリング */
 .search-container {
-  text-align: center; /* コンテナ内の内容を中央揃え */
+  text-align: center; 
 }
 
 .search-search-form {
   display: flex;
   flex-direction: row;
-  align-items: center; /* 水平中央揃え */
-  justify-content: center; /* 水平方向の中央揃え */
-  margin-top: 80px; /* 上部マージン */
+  align-items: center; 
+  justify-content: center; 
+  margin-top: 80px; 
 }
 
 .search-search-input,
 .search-search-btn {
-  /* flexのアイテムの縦位置を揃える */
   display: flex;
   align-items: center;
 }
@@ -365,8 +359,8 @@ body {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 200px; /* 検索窓の幅 */
-  margin-bottom: 8px; /* 縦の間隔 */
+  width: 200px; 
+  margin-bottom: 8px; 
 }
 
 .search-search-btn {
@@ -376,8 +370,7 @@ body {
   border-radius: 5px;
   border: 1px solid #ccc;
   cursor: pointer;
-  margin-left: 8px; /* 横の間隔 */
-  /* ボタンの高さを指定して、inputと高さを一致させる */
+  margin-left: 8px; 
   height: 40px;
 }
 
@@ -391,7 +384,7 @@ body {
 }
 
 .search-contents ul {
-  list-style: none; /* デフォルトのリストスタイルを削除 */
+  list-style: none; 
   padding: 0;
   text-align: center;
 }
@@ -403,10 +396,10 @@ body {
 /* 画像のスタイリング */
 .search-food-image {
   width: 100%;
-  max-width: 300px; /* 画像の最大幅 */
+  max-width: 300px; 
   height: auto;
   display: block;
-  margin: 0 auto; /* 画像を中央に配置 */
+  margin: 0 auto; 
 }
 
 /* グリッドレイアウト */
@@ -417,10 +410,10 @@ body {
 }
 
 .search-food-item {
-  flex: 1 0 30%; /* 画像を3つ並べる */
-  max-width: 30%; /* 各アイテムの最大幅 */
-  box-sizing: border-box; /* パディングとボーダーを含む幅を設定 */
-  margin-bottom: 20px; /* アイテム間の間隔 */
+  flex: 1 0 30%; 
+  max-width: 30%; 
+  box-sizing: border-box; 
+  margin-bottom: 20px; 
   text-align: center;
 }
 
@@ -437,14 +430,14 @@ body {
 
 @media (max-width: 768px) {
   .search-food-item {
-    flex: 1 0 45%; /* スクリーンが小さくなったときに2列にする */
+    flex: 1 0 45%; 
     max-width: 45%;
   }
 }
 
 @media (max-width: 480px) {
   .search-food-item {
-    flex: 1 0 90%; /* スクリーンが非常に小さくなったときに1列にする */
+    flex: 1 0 90%; 
     max-width: 90%;
   }
 }

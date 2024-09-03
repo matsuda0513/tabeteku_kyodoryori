@@ -29,7 +29,6 @@ class FoodsController < ApplicationController
       image_source: @food.image_credit
     }
       @tabelog_url = "https://tabelog.com/rstLst/?vs=1&sa=&sk=#{encoded_name}&sw=#{encoded_name}&trailing_slash=true&srchTg=2"
-      # https://tabelog.com/rst/rstsearch/?LstKind=1&voluntary_search=1&lid=top_navi1&sk=#{encoded_name}&sa_input=#{encoded_prefecture}
       @instagram_url = "https://www.instagram.com/explore/tags/#{encoded_name}"
       @cookpad_url = "https://cookpad.com/search/#{encoded_name}"
     end

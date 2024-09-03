@@ -17,7 +17,7 @@ class ScrapeService
 
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.get(BASE_URL)
-    sleep 5  # ページが完全に読み込まれるまで待つ
+    sleep 5  
 
     doc = Nokogiri::HTML(driver.page_source)
     driver.quit
@@ -29,9 +29,9 @@ class ScrapeService
 
   def self.fetch_kyodoryouri_details(url)
     options = Selenium::WebDriver::Chrome::Options.new
-    options.add_argument('--headless')  # ヘッドレスモードで実行するオプションを追加
-    options.add_argument('--disable-gpu')  # GPUの使用を無効化するオプションを追加
-    options.add_argument('--window-size=1920,1080')  # ウィンドウサイズを設定するオプションを追加
+    options.add_argument('--headless') 
+    options.add_argument('--disable-gpu') 
+    options.add_argument('--window-size=1920,1080') 
 
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.get(url)
@@ -46,7 +46,7 @@ class ScrapeService
     image_element = doc.at('.menu_main img')
     image_url = URI.join(url, image_element['src']).to_s
     image_elements = doc.css('.thumb02 .js_modal01')
-    first_image_src = image_elements.first&.at('.dl_img img')&.[]('src')  # &.を使用してnilチェック
+    first_image_src = image_elements.first&.at('.dl_img img')&.[]('src') 
     image_source = nil
 
     if first_image_src

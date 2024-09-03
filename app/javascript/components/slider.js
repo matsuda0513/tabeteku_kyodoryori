@@ -1,6 +1,6 @@
 export default function initSlider() {
   const slides = document.querySelectorAll('.slider img');
-  if (slides.length === 0) return; // スライドがない場合は初期化しない
+  if (slides.length === 0) return; 
 
   let currentSlide = 0;
   let autoSlideInterval;
@@ -22,7 +22,7 @@ export default function initSlider() {
   }
 
   function startAutoSlide() {
-    autoSlideInterval = setInterval(nextSlide, 3000); // 3秒ごとにスライド
+    autoSlideInterval = setInterval(nextSlide, 3000); 
   }
 
   function stopAutoSlide() {
@@ -44,19 +44,6 @@ export default function initSlider() {
       startAutoSlide();
     });
   }
-
-  // document.querySelector('.next-button').addEventListener('click', () => {
-  //   stopAutoSlide();
-  //   nextSlide();
-  //   startAutoSlide();
-  // });
-
-  // document.querySelector('.prev-button').addEventListener('click', () => {
-  //   stopAutoSlide();
-  //   previousSlide();
-  //   startAutoSlide();
-  // });
-
   slides[currentSlide].style.display = 'block'; // 初期スライドを表示
   startAutoSlide(); // 自動スライドを開始
 }
